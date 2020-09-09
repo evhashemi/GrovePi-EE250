@@ -1,5 +1,7 @@
 // Server side C/C++ program to demonstrate Socket programming 
 // Here's some include statements that might be helpful for you
+//Name: Evan Hashemi
+//Repo link: https://github.com/evhashemi/GrovePi-EE250.git
 #include <string> 
 #include <cstring>
 #include <iostream>
@@ -16,7 +18,7 @@ int main(int argc, char const *argv[])
 	char socket_read_buffer[1024];
 	
 	// TODO: Fill out the server ip and port
-	std::string server_ip = "34.209.114.30";
+	std::string server_ip = "3.133.118.65";
 	std::string server_port = "5001";
 
 	int opt = 1;
@@ -47,7 +49,7 @@ int main(int argc, char const *argv[])
 	connect(client_fd, server_addr->ai_addr,server_addr->ai_addrlen); //sizeof(server_addr)
 	// TODO: Retreive user input
 	int i,length;
-	for(i=0;i<argc;i++){
+	for(i=1;i<argc;i++){
 	  length = strlen(argv[i]);
 	  write(client_fd, argv[i],length+1);
 	// TODO: Send() the user input to the aws server
