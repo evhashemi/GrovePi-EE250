@@ -51,9 +51,9 @@ int main(int argc, char const *argv[])
 	int i,length;
 	for(i=1;i<argc;i++){
 	  length = strlen(argv[i]);
-	  write(client_fd, argv[i],length+1);
+	  
 	// TODO: Send() the user input to the aws server
-
+	  write(client_fd, argv[i],length+1);
 	// TODO: Recieve any messages from the aws server and print it here. Don't forget to make sure the string is null terminated!
 	  int len = recv(client_fd, socket_read_buffer, sizeof(socket_read_buffer), 0);
 	  socket_read_buffer[len] = '\0';
